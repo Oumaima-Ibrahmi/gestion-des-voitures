@@ -24,16 +24,16 @@ href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
 
  <table class="table table-striped">
   <tr>
- <th>ID</th><th>Marque</th><th>Prix</th><th>Couleur</th><th>DateCréation</th><th>Suppression<th>Edition</th>
+ <th>ID</th><th>Nom</th><th>Prix</th><th>DateCréation</th><th>Suppression<th>Edition</th>
  </tr>
  
  
  <c:forEach items="${voitures}" var="p">
  <tr>
  <td>${p.voitureId }</td>
- <td>${p.marqueVoiture}</td>
+ <td>${p.nomVoiture}</td>
  <td>${p.prixVoiture}</td>
- <td>${p.voitureCouleur}</td>
+
  <td><fmt:formatDate pattern="dd/MM/yyyy" value="${p.dateCreation}" /></td>
  <td><a onclick="return confirm('Etes-vous sûr ?')" href="supprimerVoiture?id=${p.voitureId }" >Supprimer</a></td>
 <td><a href="modifierVoiture?id=${p.voitureId }">Edit</a></td>

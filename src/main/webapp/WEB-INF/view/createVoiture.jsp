@@ -20,16 +20,13 @@ src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <form action="saveVoiture" method="post">
  <div class="form-group">
  <label class="control-label">Marque Voiture :</label>
- <input type="text" name="marqueVoiture" class="form-control"/>
+ <input type="text" name="nomVoiture" class="form-control"/>
  </div>
  <div class="form-group">
  <label class="control-label">Prix Voiture :</label>
  <input type="text" name="prixVoiture" class="form-control"/>
  </div>
- <div class="form-group">
- <label class="control-label">Couleur Voiture:</label>
- <input type="text" name="voitureCouleur" class="form-control"/>
- </div>
+ 
  <div class="form-group">
  <label class="control-label">date création :</label>
  <input type="date" name="date" class="form-control"/>

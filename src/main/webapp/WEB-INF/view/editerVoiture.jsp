@@ -25,8 +25,8 @@ src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 readonly class="form-control"/>
  </div>
  <div class="form-group">
- <label class="control-label">Marque Voiture :</label>
- <input type="text" name="marqueVoiture" value="${voiture.marqueVoiture}"
+ <label class="control-label">Nom Voiture :</label>
+ <input type="text" name="nomVoiture" value="${voiture.nomVoiture}"
 class="form-control"/>
  </div>
  <div class="form-group">
@@ -34,13 +34,9 @@ class="form-control"/>
  <input type="text" name="prixVoiture" value="${voiture.prixVoiture}"
 class="form-control"/>
  </div>
- <label class="control-label">Couleur Voiture :</label>
- <input type="text" name="voitureCouleur" value="${voiture.voitureCouleur}"
-class="form-control"/>
- </div>
  <div class="form-group">
  <label class="control-label"> Date création :</label>
- <fmt:formatDate pattern="yyyy-MM-dd" value="${produit.dateCreation}" var="formatDate" />
+ <fmt:formatDate pattern="yyyy-MM-dd" value="${voiture.dateCreation}" var="formatDate" />
  <input type="date" name="date" value="${formatDate}" class="formcontrol"/>
  </div>
  <div>

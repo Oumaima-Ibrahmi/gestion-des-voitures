@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<head>
+<meta charset="ISO-8859-1">
+<title>Liste des Voitures</title>
+</head>
+<body>
+<div layout:fragment="Mycontent">
+<div class="container mt-5">
+<div class="card">
+<div class="card-header">
+Liste des Voitures
+</div>
+<div class="card-body">
+<table class="table table-striped">
+<tr>
+<th>ID</th><th>Nom Voiture</th><th>Prix</th><th>Date Creation</th><th></th>
+</tr>
+<tr th:each="p:${voitures.content}">
+<td th:text="${p.idVoiture}"></td>
+<td th:text="${p.nomVoiture}"></td>
+<td th:text="${p.prixVoiture}"></td>
+<td><fmt:formatDate pattern="dd/MM/yyyy" th:text="${p.dateCreation}" /></td>
+<td><a onclick="return confirm('Etes-vous s�r ?')" class="btn btn-danger" th:href="@{supprimerVoiture(id=${p.idVoiture}, page=${currentPage},size=${size})}">Supprimer</a></td>
+</tr>
+</table>
+<ul class="nav nav-pills">
+<li th:each="page,status:${pages}">
+<a th:class="${status.index==currentPage?'btn btn-primary':'btn' }"
+th:href="@{ ListeVoitures(page=${status.index}, size=${size} ) }"
+th:text="${status.index }"></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

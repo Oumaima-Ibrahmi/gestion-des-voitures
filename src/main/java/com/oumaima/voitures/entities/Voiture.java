@@ -7,77 +7,54 @@ import javax.persistence.Id;
 
 
 @Entity
-public class Voiture {
+public class Voiture{
 	
 	@Id
-	@GeneratedValue (strategy=GenerationType.IDENTITY)
-	private Long voitureId;
-	private String voitureCouleur;
-	private Date dateCreation;
-	private String marqueVoiture;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long idVoiture;
+	private String nomVoiture;
 	private Double prixVoiture;
+	private Date dateCreation;
 	
-	public Voiture(String voitureCouleur, Date dateCreation, String marqueVoiture, Double prixVoiture) {
-		super();
-		this.voitureCouleur = voitureCouleur;
-		this.dateCreation = dateCreation;
-		this.marqueVoiture = marqueVoiture;
-		this.prixVoiture = prixVoiture;
-	}
-
 	public Voiture() {
 		super();
-		
 	}
-
-	public Long getVoitureId() {
-		return voitureId;
+	public Voiture(String nomVoiture, Double prixVoiture, Date dateCreation) {
+		super();
+		this.nomVoiture= nomVoiture;
+		this.prixVoiture= prixVoiture;
+		this.dateCreation= dateCreation;
 	}
-
-	public void setVoitureId(Long voitureId) {
-		this.voitureId = voitureId;
+	public Long getIdVoiture() {
+		return idVoiture;
 	}
-
-	public String getVoitureCouleur() {
-		return voitureCouleur;
+	public void setIdVoiture(Long idVoiture) {
+		this.idVoiture = idVoiture;
 	}
-
-	public void setVoitureCouleur(String voitureCouleur) {
-		this.voitureCouleur = voitureCouleur;
+	public String getNomVoiture() {
+		return nomVoiture;
 	}
-
-	public Date getDateCreation() {
-		return dateCreation;
+	public void setNomVoiture(String nomVoiture) {
+		this.nomVoiture =nomVoiture;
 	}
-
-	public void setDateCreation(Date dateCreation) {
-		this.dateCreation = dateCreation;
-	}
-
-	public String getMarqueVoiture() {
-		return marqueVoiture;
-	}
-
-	public void setMarqueVoiture(String marqueVoiture) {
-		this.marqueVoiture = marqueVoiture;
-	}
-
 	public Double getPrixVoiture() {
 		return prixVoiture;
 	}
-
 	public void setPrixVoiture(Double prixVoiture) {
 		this.prixVoiture = prixVoiture;
 	}
-
+	
+	
+	public Date getDateCreation() {
+		return dateCreation;
+	}
+	public void setDateCreation(Date dateCreation) {
+		this.dateCreation = dateCreation;
+	}
 	@Override
 	public String toString() {
-		return "Voiture [voitureId=" + voitureId + ", voitureCouleur=" + voitureCouleur + ", dateCreation="
-				+ dateCreation + ", marqueVoiture=" + marqueVoiture + ", prixVoiture=" + prixVoiture + "]";
+		return "Voiture [idVoiture=" + idVoiture + ", nomVoiture=" + nomVoiture + ", prixVoiture="
+				+ prixVoiture  + ", dateCreation=" + dateCreation + "]";
 	}
-	
-	
-	
-	
-	
+
 }
